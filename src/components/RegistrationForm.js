@@ -24,7 +24,7 @@ const RegistrationForm = () => {
 		setConfirmPassword("");
 	};
 
-  function removeError() {
+  function handleFocus () {
     if (errorMessage) {
       setErrorMessage("")
     }
@@ -68,7 +68,7 @@ const RegistrationForm = () => {
 				name="email" 
 				value={emailValue} 
 				onChange={handleEmailChange} 
-        onFocus={handleEmailChange.onFocus=removeError}
+        onFocus={handleFocus}
 				/>
 			</label>
 			<label>
@@ -77,7 +77,7 @@ const RegistrationForm = () => {
 				name="password" 
 				value={passwordValue} 
 				onChange={handlePasswordChange} 
-        onFocus={handlePasswordChange.onFocus=removeError}
+        onFocus={handleFocus}
 				/>
 			</label>
 			<label>
@@ -86,7 +86,7 @@ const RegistrationForm = () => {
 				name="confirm-password" 
 				value={confirmPasswordValue} 
         onChange={handleConfirmPasswordChange}
-				onFocus={handleConfirmPasswordChange.onFocus=removeError} 
+				onFocus={handleFocus} 
 				/>
 			</label>
       {errorMessage && <div className="error">{errorMessage}</div>}
